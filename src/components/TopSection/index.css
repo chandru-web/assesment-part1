@@ -104,7 +104,21 @@
 span {
   cursor: pointer;
 }
+.contact-us {
+  color: blue;
+}
 
+.rooms-count {
+  font-size: 24px;
+}
+@media screen and (max-width: 600px) {
+  .amount-button {
+    margin-left: 70px;
+  }
+  .confirm-button {
+    margin-left: 80px;
+  }
+}
 .date {
   font-size: 1rem;
   display: flex;
@@ -129,15 +143,15 @@ span {
   margin: 0.5rem;
 }
 
-.book-button-container {
-  display: flex;
-}
-
 .booking-button {
   padding: 0.75rem 1.5rem;
   background-color: #007bff;
   color: white;
   border: none;
+  height: 40px;
+  width: 150px;
+  padding: 5px;
+  text-align: center;
   border-radius: 0.5rem;
 }
 
@@ -172,24 +186,24 @@ span {
     font-size: 1.5rem;
   }
   .booking-button {
-    padding: 0.5rem; /* Adjust button padding for smaller screens */
-    font-size: 0.9rem; /* Smaller button text size on mobile */
-    width: auto; /* Allow button to adjust width based on content */
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    width: 150px;
+    height: 40px;
   }
   .check-in-container,
   .check-out-container,
   .rooms-container {
-    width: 100%; /* Full width on mobile devices */
-    margin-bottom: 0.5rem; /* Space between sections on mobile */
+    width: 100%;
+    margin-bottom: 0.5rem;
   }
 
   .go-to-book-button {
-    width: 100%; /* Full width for the go-to-book button on mobile */
-    text-align: center; /* Center align text in the button container */
+    width: 100%;
+    text-align: center;
   }
 }
 
-/* Amount Button Styles */
 .amount-button {
   display: flex;
   align-items: center;
@@ -238,11 +252,71 @@ span {
 .adult,
 .children {
   font-size: 1rem;
-  text-align:center;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
   .detail-item {
     flex-basis: calc(100% - (1rem));
+  }
+}
+
+.confirm-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px;
+  width: 150px;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+  background-color: #45a049;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.address-container,
+.order-complete-container {
+  padding: 15px;
+}
+
+.right-tick-image {
+  height: 30px;
+  width: 30px;
+}
+
+.name,
+.phone-number,
+.email,
+.children,
+.order-complete,
+.have-questions,
+.contact-us {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .address-container,
+  .order-complete-container {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .address-container,
+  .order-complete-container {
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: left;
   }
 }
