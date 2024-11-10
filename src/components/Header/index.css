@@ -1,0 +1,36 @@
+.navbar-brand {
+  font-size: 1.5rem; /* Increase brand font size */
+  font-weight: bold; /* Make brand text bold */
+  color: #007bff; /* Brand color */
+}
+
+.navbar-brand:hover {
+  color: #0056b3; /* Darker shade on hover */
+}
+
+.nav-link {
+  font-size: 1rem; /* Set font size for nav links */
+  color: #333; /* Default link color */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.nav-link:hover {
+  color: #007bff; /* Change color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Optional: Add some padding to the navbar */
+.navbar {
+  padding: 1rem; /* Add padding to the navbar */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem; /* Smaller brand size on mobile */
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}

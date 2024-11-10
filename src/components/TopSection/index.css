@@ -1,0 +1,248 @@
+.top-section-container {
+  padding: 20px;
+  background-color: azure;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.logo-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.fa-icon,
+.in-icon {
+  font-size: 24px;
+  color: #3b5998;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.in-icon {
+  color: #c13584;
+}
+
+.fa-icon:hover,
+.in-icon:hover {
+  color: #ff5722;
+  transform: scale(1.2);
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+}
+
+.ladakh-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  .text-container {
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+  }
+}
+.work-from-ladakh {
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+}
+
+.booking-container {
+  padding-top: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.check-in-container,
+.check-out-container,
+.rooms-container,
+.book-button-container {
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.check-in-container,
+.check-out-container,
+.rooms-container {
+  min-width: calc(25% - 1rem);
+}
+
+.check-in,
+.check-out,
+.rooms {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+span {
+  cursor: pointer;
+}
+
+.date {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rooms-count-container {
+  display: flex;
+  align-items: center;
+}
+
+.button-minus,
+.button-plus {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.rooms-count {
+  margin: 0.5rem;
+}
+
+.book-button-container {
+  display: flex;
+}
+
+.booking-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.booking-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .row {
+    flex-direction: row;
+  }
+  .check-in-container,
+  .check-out-container,
+  .rooms-container,
+  .book-button-container {
+    width: calc(50% - (1rem));
+    margin-bottom: 0.5rem;
+    align-items: center;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.25rem;
+  }
+  .date {
+    font-size: 0.85rem;
+  }
+  .button-minus,
+  .button-plus {
+    font-size: 1.5rem;
+  }
+  .booking-button {
+    padding: 0.5rem; /* Adjust button padding for smaller screens */
+    font-size: 0.9rem; /* Smaller button text size on mobile */
+    width: auto; /* Allow button to adjust width based on content */
+  }
+  .check-in-container,
+  .check-out-container,
+  .rooms-container {
+    width: 100%; /* Full width on mobile devices */
+    margin-bottom: 0.5rem; /* Space between sections on mobile */
+  }
+
+  .go-to-book-button {
+    width: 100%; /* Full width for the go-to-book button on mobile */
+    text-align: center; /* Center align text in the button container */
+  }
+}
+
+/* Amount Button Styles */
+.amount-button {
+  display: flex;
+  align-items: center;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.amount-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.amount-icon {
+  margin-right: 0.5rem;
+}
+
+.arrow-icon {
+  margin-left: auto;
+}
+
+.click-to-pay {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.details-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  margin: 10px;
+}
+
+.name,
+.email,
+.phone-number,
+.adult,
+.children {
+  font-size: 1rem;
+  text-align:center;
+}
+
+@media (max-width: 600px) {
+  .detail-item {
+    flex-basis: calc(100% - (1rem));
+  }
+}
