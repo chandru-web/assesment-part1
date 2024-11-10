@@ -1,3 +1,4 @@
+
 import {
   FaFacebook,
   FaInstagram,
@@ -51,23 +52,20 @@ class TopSection extends Component {
     </div>
   )
 
-  renderGoToBookButton = () => {
-    const {isBookingConfirmed} = this.state
-    return (
-      <div className="col-5 col-md-3 go-to-book-button">
-        <button
-          className="amount-button"
-          type="button"
-          onClick={this.onGoToPayment}
-        >
-          <FaRupeeSign />
-          <span className="amount-value">12,430</span>
-          <FaArrowRight />
-        </button>
-        <p className="click-to-pay">Click to pay token amount</p>
-      </div>
-    )
-  }
+  renderGoToBookButton = () => (
+    <div className="col-5 col-md-3 go-to-book-button">
+      <button
+        className="amount-button"
+        type="button"
+        onClick={this.onGoToPayment}
+      >
+        <FaRupeeSign />
+        <span className="amount-value">12,430</span>
+        <FaArrowRight />
+      </button>
+      <p className="click-to-pay">Click to pay token amount</p>
+    </div>
+  )
 
   renderBeforeBooking = () => (
     <>
@@ -111,32 +109,35 @@ class TopSection extends Component {
               <IoMdArrowDropdown />
             </p>
           </div>
-          <div className="rooms-container col-5 col-md-3">
-            <h1 className="rooms">Rooms</h1>
-            <div className="rooms-count-container">
-              <button
-                type="button"
-                className="button-minus"
-                onClick={this.onDecreaseRoom}
-              >
-                <FaCircleMinus />
-              </button>
-              <p className="rooms-count">{roomsCount}</p>
-              <button
-                type="button"
-                className="button-plus"
-                onClick={this.onIncreaseRoom}
-              >
-                <FaSquarePlus />
-              </button>
+
+          {isBookingConfirmed ? (
+            this.renderRoomConfirm()
+          ) : (
+            <div className="rooms-container col-5 col-md-3">
+              <h1 className="rooms">Rooms</h1>
+              <div className="rooms-count-container">
+                <button
+                  type="button"
+                  className="button-minus"
+                  onClick={this.onDecreaseRoom}
+                >
+                  <FaCircleMinus />
+                </button>
+                <p className="rooms-count">{roomsCount}</p>
+                <button
+                  type="button"
+                  className="button-plus"
+                  onClick={this.onIncreaseRoom}
+                >
+                  <FaSquarePlus />
+                </button>
+              </div>
             </div>
-          </div>
-          {isBooked
-            ? isBookingConfirmed &&
-              ? this.renderBookingConfirmed()
-              : this.renderAfterBooking()
-            : this.renderBeforeBooking()
-            }
+          )}
+
+          {!isBooked && !isBookingConfirmed && this.renderBookButton()}
+          {isBooked && !isBookingConfirmed && this.renderGoToBookButton()}
+          {isBooked && isBookingConfirmed && this.renderBookingConfirmButton()}
         </div>
       </div>
     )
@@ -187,13 +188,14 @@ class TopSection extends Component {
           <p className="contact-us">Contact Us</p>
         </div>
       </div>
+      {this.renderBookingSection()}
     </>
   )
 
   renderRoomConfirm = () => {
     const {roomsCount} = this.state
     return (
-      <div className="rooms-container">
+      <div className="rooms-container col-12 col-md-3">
         <h1 className="rooms">Rooms</h1>
         <p className="rooms-count">{roomsCount}</p>
       </div>
@@ -201,20 +203,22 @@ class TopSection extends Component {
   }
 
   renderBookingConfirmButton = () => (
-    <div className="booking-confirm-button-container">
+    <div className="booking-confirm-button-container col-12 col-md-3">
       <button type="button" className="confirm-button">
-        12,430
+        $ 12,430
       </button>
     </div>
   )
 
   render() {
-    const {isBooked} = this.state
+    const {isBooked, isBookingConfirmed} = this.state
     return (
       <>
         <div className="top-section-container container">
           <div className="row align-items-center">
-            {!isBooked ? this.renderBeforeBooking() : this.renderAfterBooking()}
+            {!isBooked && !isBookingConfirmed && this.renderBeforeBooking()}
+            {isBooked && !isBookingConfirmed && this.renderAfterBooking()}
+            {isBooked && isBookingConfirmed && this.renderBookingConfirmed()}
           </div>
         </div>
       </>
